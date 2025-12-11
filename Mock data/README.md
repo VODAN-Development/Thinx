@@ -1,26 +1,26 @@
 # Test Data for Learning Thinx
 
-This folder contains **safe, realistic example datasets** you can use to learn how Thinx works without touching real research data.
+This folder contains safe, realistic example datasets for learning how Thinx works without using real research data.
 
-## Why Use Mock Data?
+## Purpose
 
-✅ **Learn safely** - Practice without risking real research data  
-✅ **Test features** - Try AI mapping, transformations, and queries  
-✅ **Quick setup** - No need to wait for real database access  
-✅ **Show demos** - Present Thinx capabilities to colleagues  
-✅ **Troubleshoot** - Verify your installation works correctly
+- **Learn safely** - Practice without risking real research data
+- **Test features** - Try AI mapping, transformations, and queries
+- **Quick setup** - No need to wait for real database access
+- **Show demos** - Present Thinx capabilities to colleagues
+- **Troubleshoot** - Verify installation works correctly
 
 ## Available Test Files
 
-### 📊 Interview_mock_comprehensive.csv ⭐ **START HERE**
+### Interview_mock_comprehensive.csv (Recommended)
 
-**What it is:** A complete, ready-to-use test dataset with 10 realistic human trafficking cases
+**Description:** A complete, ready-to-use test dataset with 10 realistic human trafficking cases
 
-**What's inside:**
+**Contents:**
 - 10 victim case studies (anonymized)
 - Multiple incident types: trafficking, smuggling, kidnapping, exploitation
 - Covers all data types: victim info, incidents, traffickers, locations
-- Properly formatted column names that AI can understand
+- Properly formatted column names for AI recognition
 
 **Columns included:**
 
@@ -32,12 +32,12 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 | **Location** | `location_id`, `location_description` | LOC001, Tripoli, Libya |
 
 **Best for:**
-- ✅ First-time users learning Thinx
-- ✅ Testing the AI Smart Mapper
-- ✅ Practicing data transformations
-- ✅ Demonstrating Thinx to stakeholders
+- First-time users learning Thinx
+- Testing the AI Smart Mapper
+- Practicing data transformations
+- Demonstrating Thinx to stakeholders
 
-**CDM Mapping Expected Results:**
+**Expected CDM Mapping Results:**
 - `victim_id` → `Victim.id`
 - `victim_age` → `Victim.age`
 - `victim_gender` → `Victim.gender`
@@ -54,23 +54,16 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 - `location_id` → `Location.id`
 - `location_description` → `Location.description`
 
-### Interview_mock_1.xlsx
-**Purpose:** Legacy Excel test file  
-**Status:** Original test data (may need column name updates)
+### Legacy Excel Files
 
-### Interview_mock_2.xlsx
-**Purpose:** Legacy Excel test file  
-**Status:** Original test data (may need column name updates)
+**Interview_mock_1.xlsx, Interview_mock_2.xlsx, Interview_mock_3.xlsx**
 
-### Interview_mock_3.xlsx
-**Purpose:** Legacy Excel test file  
-**Status:** Original test data (may need column name updates)
+Purpose: Original test files (may need column name updates)
+Status: Legacy format
 
-## Step-by-Step Tutorial: Using Mock Data
+## Tutorial 1: Test the AI Smart Mapper (15 minutes)
 
-### Tutorial 1: Test the AI Smart Mapper (15 minutes)
-
-**What you'll learn:** How to use AI to automatically organize your data columns
+**What you'll learn:** How to use AI to automatically organize data columns
 
 **Prerequisites:**
 - Thinx running with `--profile full`
@@ -86,48 +79,48 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 2. **Open the interface:** http://localhost
 
 3. **Upload the test data:**
-   - Navigate to **Step 2: Upload Data**
-   - Click **"Choose File"**
+   - Navigate to Step 2: Upload Data
+   - Click "Choose File"
    - Select `Interview_mock_comprehensive.csv`
-   - Click **"Upload"**
-   - Wait for: ✅ "File uploaded successfully"
+   - Click "Upload"
+   - Wait for: "File uploaded successfully"
 
 4. **Move to Step 3:**
-   - Click **"Step 3: Schema & Validation"**
-   - You should see the "AI Smart Mapper" section
+   - Click "Step 3: Schema & Validation"
+   - Locate "AI Smart Mapper" section
 
 5. **Download AI Model** (first time only):
    - Find "Download New Model" section
    - Type: `llama3.2`
-   - Click **"Download"**
-   - Wait 5-15 minutes (☕ coffee break!)
-   - When done, click **"Refresh"**
+   - Click "Download"
+   - Wait 5-15 minutes
+   - When done, click "Refresh"
 
 6. **Run the AI Mapper:**
-   - Select **"llama3.2"** from the dropdown
-   - Click **"Suggest Mappings"**
+   - Select "llama3.2" from dropdown
+   - Click "Suggest Mappings"
    - Wait 30-60 seconds (loading spinner appears)
 
 7. **Review the results:**
-   - You should see a mapping table
+   - View mapping table
    - **Expected mappings:**
-     - `victim_age` → `Victim.age` ✅
-     - `victim_gender` → `Victim.gender` ✅
-     - `victim_nationality` → `Victim.nationality` ✅
-     - `incident_type` → `Incident.type` ✅
-     - `trafficker_name` → `Trafficker.name` ✅
+     - `victim_age` → `Victim.age`
+     - `victim_gender` → `Victim.gender`
+     - `victim_nationality` → `Victim.nationality`
+     - `incident_type` → `Incident.type`
+     - `trafficker_name` → `Trafficker.name`
 
 8. **Apply the mappings:**
-   - Click **"Apply Mapping to File"**
-   - Wait for: ✅ "Mappings applied successfully"
+   - Click "Apply Mapping to File"
+   - Wait for: "Mappings applied successfully"
 
-**🎉 Success!** Your data is now properly structured.
+Success: Your data is now properly structured.
 
 ---
 
-### Tutorial 2: Preview and Transform Data (10 minutes)
+## Tutorial 2: Preview and Transform Data (10 minutes)
 
-**What you'll learn:** How to view and modify your data before processing
+**What you'll learn:** How to view and modify data before processing
 
 **Prerequisites:**
 - Completed Tutorial 1, or uploaded any data file
@@ -138,33 +131,33 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 
 2. **Preview your data:**
    - Find "Data Transformation Tools" section
-   - Click **"Preview Data"** button
-   - You'll see the first 10 rows of your dataset in a table
+   - Click "Preview Data" button
+   - View first 10 rows of dataset in table
 
-3. **Try a transformation - Age Categories:**
-   - In the "Select Column" dropdown, choose `victim_age`
-   - In "Select Transformation", choose **"Numerical → Categorical"**
-   - Click **"Apply Transformation"**
-   - **What happens:** Ages convert to categories
+3. **Try transformation - Age Categories:**
+   - In "Select Column" dropdown, choose `victim_age`
+   - In "Select Transformation", choose "Numerical → Categorical"
+   - Click "Apply Transformation"
+   - **Result:** Ages convert to categories
      - 0-17 → "Child"
      - 18-25 → "Young Adult"
      - 26-60 → "Adult"
      - 60+ → "Senior"
 
-4. **Try another transformation - Text Case:**
+4. **Try transformation - Text Case:**
    - Select column: `victim_gender`
-   - Select transformation: **"Normalize Text Case"**
+   - Select transformation: "Normalize Text Case"
    - Choose: "Title Case"
-   - Click **"Apply"**
-   - **What happens:** "female" → "Female", "male" → "Male"
+   - Click "Apply"
+   - **Result:** "female" → "Female", "male" → "Male"
 
 5. **Preview again** to see your changes
 
-**💡 Pro Tip:** You can chain multiple transformations - just apply one after another!
+Note: You can chain multiple transformations - apply one after another.
 
 ---
 
-### Tutorial 3: Query the Data (Advanced, 20 minutes)
+## Tutorial 3: Query the Data (Advanced, 20 minutes)
 
 **What you'll learn:** How to load data into the database and run queries
 
@@ -177,9 +170,9 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 1. **Create a repository in AllegroGraph:**
    - Open http://localhost:10035
    - Login: `admin` / `admin123`
-   - Click **"Create Repository"**
+   - Click "Create Repository"
    - Name: `test_data`
-   - Click **"Create"**
+   - Click "Create"
 
 2. **Process and upload mock data:**
    - This step typically uses the `push_to_allegrograph.py` script
@@ -187,7 +180,7 @@ This folder contains **safe, realistic example datasets** you can use to learn h
 
 3. **Connect Thinx to the test database:**
    - Go to http://localhost
-   - Click **"➕ Add New Connection"**
+   - Click "Add New Connection"
    - Fill in:
      - Name: `Test Dataset`
      - Server: `allegrograph`
@@ -195,25 +188,26 @@ This folder contains **safe, realistic example datasets** you can use to learn h
      - Repository: `test_data`
      - Username: `admin`
      - Password: `admin123`
-   - Click **"Save Connection"**
+   - Click "Save Connection"
 
 4. **View the data:**
-   - Click **"📊 View Data"** on your connection
-   - You should see victim statistics and data table
+   - Click "View Data" on your connection
+   - View victim statistics and data table
 
 5. **Try a SPARQL query** (Advanced):
    - Open AllegroGraph at http://localhost:10035
    - Select your `test_data` repository
    - Go to "Query" tab
-   - Try the sample queries from `sparql queries/mock_*.rq` files
+   - Try sample queries from `sparql queries/mock_*.rq` files
 
-**Expected results:** You should see 10 victims, multiple incidents, and various statistics.
+**Expected results:** 10 victims, multiple incidents, and various statistics.
 
 ## Common Data Model (CDM) Entities
 
 The mock data aligns with these CDM entities:
 
 ### Victim
+
 - `id` (required) - Unique identifier
 - `age` - Age in years
 - `gender` - Gender identity
@@ -222,32 +216,37 @@ The mock data aligns with these CDM entities:
 - `displacementStatus` - Refugee/IDP status
 
 ### Incident
+
 - `id` (required) - Unique identifier
 - `date` - Date of incident (YYYY-MM-DD)
 - `type` - Type (Trafficking, Smuggling, Kidnapping, etc.)
 - `description` - Detailed description
 
 ### Trafficker
+
 - `id` (required) - Unique identifier
 - `name` - Name of trafficker
 - `nationality` - Country of origin
 
 ### Location
+
 - `id` (required) - Unique identifier
 - `description` - Location name/description
 
 ## Data Quality Notes
 
 ### Good Column Names (AI will map correctly)
-✅ `victim_age`, `victim_gender`, `victim_nationality`  
-✅ `incident_date`, `incident_type`  
-✅ `trafficker_name`, `trafficker_nationality`  
-✅ `location_description`
+
+- `victim_age`, `victim_gender`, `victim_nationality`
+- `incident_date`, `incident_type`
+- `trafficker_name`, `trafficker_nationality`
+- `location_description`
 
 ### Poor Column Names (AI may struggle)
-❌ `age`, `gender`, `nationality` (ambiguous - could be victim or trafficker)  
-❌ `col1`, `col2`, `data` (no semantic meaning)  
-❌ `field_x`, `unnamed` (unclear purpose)
+
+- `age`, `gender`, `nationality` (ambiguous - could be victim or trafficker)
+- `col1`, `col2`, `data` (no semantic meaning)
+- `field_x`, `unnamed` (unclear purpose)
 
 ## Creating Your Own Mock Data
 
@@ -271,34 +270,34 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
 ```
 
 **Tips for good column names:**
-- ✅ Include entity type: `victim_age`, not just `age`
-- ✅ Be descriptive: `incident_date`, not `date`
-- ✅ Use underscores: `trafficker_name`, not `traffickername`
-- ✅ Be consistent: `victim_gender`, not `gender_victim`
+- Include entity type: `victim_age`, not just `age`
+- Be descriptive: `incident_date`, not `date`
+- Use underscores: `trafficker_name`, not `traffickername`
+- Be consistent: `victim_gender`, not `gender_victim`
 
 ---
 
 ## Troubleshooting
 
-### ❌ "No data file found" Error
+### "No data file found" Error
 
-**Cause:** You tried to preview/transform data before uploading a file
+**Cause:** Attempted to preview/transform data before uploading file
 
 **Solution:**
-1. Go to **Step 2: Upload Data**
-2. Click **"Choose File"**
+1. Go to Step 2: Upload Data
+2. Click "Choose File"
 3. Select your mock data file
-4. Click **"Upload"**
+4. Click "Upload"
 5. Wait for confirmation message
-6. Now try Step 3 again
+6. Try Step 3 again
 
 ---
 
-### ❌ AI Mapping Returns "null" or Empty for All Fields
+### AI Mapping Returns "null" or Empty for All Fields
 
 **Cause:** AI couldn't understand your column names
 
-**Possible solutions:**
+**Solutions:**
 
 **Option 1 - Use better column names:**
 - Change `age` → `victim_age`
@@ -317,7 +316,7 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
 
 ---
 
-### ❌ Transformation Fails or Shows Error
+### Transformation Fails or Shows Error
 
 **Common causes and fixes:**
 
@@ -329,7 +328,7 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
 
 ---
 
-### ❌ Expected Mappings Don't Appear
+### Expected Mappings Don't Appear
 
 **Example:** `victim_age` should map to `Victim.age` but shows something else
 
@@ -358,12 +357,12 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
 
 ### Still Stuck?
 
-1. **📚 Check main documentation:**
+1. **Check main documentation:**
    - [README.md](../README.md) - Complete user guide
    - [QUICK_START.md](../QUICK_START.md) - Setup troubleshooting
    - [AI_MAPPER.md](../docs/AI_MAPPER.md) - AI-specific help
 
-2. **🔍 Check logs for errors:**
+2. **Check logs for errors:**
    ```bash
    # View backend logs
    docker-compose logs backend
@@ -372,7 +371,7 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
    docker-compose logs
    ```
 
-3. **💻 Verify your setup:**
+3. **Verify your setup:**
    ```bash
    # Check all containers are running
    docker-compose ps
@@ -380,7 +379,7 @@ V003,19,Female,Nigerian,INC003,Exploitation,2024-03-10
    # Should see: frontend, backend, allegrograph, ollama (if full profile)
    ```
 
-4. **🔄 Try a fresh start:**
+4. **Try a fresh start:**
    ```bash
    docker-compose down -v
    docker-compose --profile full up --build

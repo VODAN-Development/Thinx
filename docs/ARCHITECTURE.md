@@ -1,6 +1,7 @@
-# New Architecture: Containerized Flask + Vue.js Application
+# Architecture: Containerized Flask + Vue.js Application
 
 ## Overview
+
 This document describes the refactored architecture for the Data Science in Practice application, transitioning from a monolithic Flask application to a modern containerized microservices architecture.
 
 ## Architecture Diagram
@@ -25,6 +26,7 @@ This document describes the refactored architecture for the Data Science in Prac
 ## Services
 
 ### 1. Frontend Service (Vue.js)
+
 - **Technology:** Vue.js 3 with Vite
 - **Port:** 80 (HTTP)
 - **Purpose:** User interface for connection management and data visualization
@@ -34,6 +36,7 @@ This document describes the refactored architecture for the Data Science in Prac
   - Data visualization components
 
 ### 2. Backend Service (Flask)
+
 - **Technology:** Flask (Python 3.11+)
 - **Port:** 5000
 - **Purpose:** REST API for connection management and data operations
@@ -44,6 +47,7 @@ This document describes the refactored architecture for the Data Science in Prac
   - AllegroGraph query proxy
 
 ### 3. Database Service (AllegroGraph)
+
 - **Technology:** AllegroGraph 8.0+
 - **Port:** 10035
 - **Purpose:** RDF triple store for human trafficking data
@@ -59,7 +63,7 @@ DataScienceInPractice/
 ├── docker-compose.yml           # Service orchestration
 ├── .env.example                 # Environment variables template
 ├── README.md                    # Comprehensive documentation
-├── ARCHITECTURE_NEW.md          # This file
+├── ARCHITECTURE.md              # This file
 │
 ├── backend/                     # Flask REST API
 │   ├── Dockerfile
@@ -96,6 +100,7 @@ DataScienceInPractice/
 ## Data Flow
 
 ### Connection Management Flow
+
 1. User enters connection details in Vue.js UI
 2. Frontend sends POST request to Flask API (`/api/connections`)
 3. Flask validates and saves connection to `connections.json`
@@ -103,6 +108,7 @@ DataScienceInPractice/
 5. Frontend updates connection list
 
 ### Data Query Flow
+
 1. User selects active connection in UI
 2. Frontend sends GET request to Flask API (`/api/data?connection_id=X`)
 3. Flask loads connection from `connections.json`
@@ -112,6 +118,7 @@ DataScienceInPractice/
 7. Vue.js renders data in table/chart format
 
 ### FAIR Metadata Flow
+
 1. User enters FAIR Data Point URL in connection form
 2. Frontend requests metadata (`/api/fair-metadata?url=X`)
 3. Flask fetches metadata from FAIR Data Point
@@ -120,6 +127,7 @@ DataScienceInPractice/
 ## API Endpoints
 
 ### Connection Management
+
 - `POST /api/connections` - Create new connection
 - `GET /api/connections` - List all connections
 - `GET /api/connections/<id>` - Get specific connection
@@ -128,23 +136,27 @@ DataScienceInPractice/
 - `POST /api/connections/<id>/activate` - Set active connection
 
 ### Data Operations
+
 - `GET /api/data` - Query data from active connection
 - `POST /api/query` - Execute custom SPARQL query
 - `GET /api/statistics` - Get dataset statistics
 
 ### Metadata
+
 - `GET /api/fair-metadata` - Fetch FAIR Data Point metadata
 - `GET /api/ontology` - Get ontology structure
 
 ## Persistence Strategy
 
 ### Backend Data
+
 - **Location:** `backend/data/connections.json`
 - **Docker Volume:** Maps to container's `/app/data` directory
 - **Format:** JSON array of connection objects
 - **Backup:** Survives container restarts
 
 ### Frontend State
+
 - **Storage:** Browser localStorage for UI preferences
 - **Session:** Active connection stored in sessionStorage
 - **No persistence:** Temporary UI state lost on refresh
@@ -152,31 +164,37 @@ DataScienceInPractice/
 ## Security Considerations
 
 ### No Application Authentication
+
 - As requested, no login/registration system
 - Connection credentials stored in plaintext JSON
 - **Warning:** Suitable for trusted environments only
 
 ### AllegroGraph Credentials
+
 - User provides external credentials
 - Credentials stored locally in backend
 - Used for proxy connections only
 
 ### CORS Configuration
+
 - Flask allows requests from Vue.js origin
 - Whitelist specific frontend URL in production
 
 ## Deployment
 
 ### Development
+
 ```bash
 docker-compose up --build
 ```
+
 Access at:
 - Frontend: http://localhost
 - Backend API: http://localhost:5000
 - AllegroGraph: http://localhost:10035
 
 ### Production Considerations
+
 1. Use environment variables for sensitive config
 2. Enable HTTPS with reverse proxy (Nginx/Traefik)
 3. Implement rate limiting on API
@@ -201,6 +219,7 @@ Access at:
 The CDM defines the structure of human trafficking data:
 
 ### Core Entities
+
 1. **Victim** - Personal information (age, gender, nationality)
 2. **Crime** - Abuse details (sexual violence, deaths witnessed)
 3. **Trafficker** - Perpetrator information
@@ -208,11 +227,13 @@ The CDM defines the structure of human trafficking data:
 5. **Extortion** - Financial exploitation data
 
 ### Modification Process
+
 See Developer Guide in README.md for detailed CDM modification tutorial.
 
-## Monitoring & Logs
+## Monitoring and Logs
 
 ### Container Logs
+
 ```bash
 # View all logs
 docker-compose logs -f
@@ -224,6 +245,7 @@ docker-compose logs -f allegrograph
 ```
 
 ### Health Checks
+
 - Backend: `GET /api/health`
 - AllegroGraph: `GET http://localhost:10035/repositories`
 
@@ -246,11 +268,11 @@ The original `app.py` provided:
 - Direct AllegroGraph connection
 
 The new architecture provides:
-- ✅ Separated concerns (API vs UI)
-- ✅ Scalability (services scale independently)
-- ✅ Modern UI framework (Vue.js vs Jinja2)
-- ✅ Containerization (easy deployment)
-- ✅ Connection management (multi-dataset support)
+- Separated concerns (API vs UI)
+- Scalability (services scale independently)
+- Modern UI framework (Vue.js vs Jinja2)
+- Containerization (easy deployment)
+- Connection management (multi-dataset support)
 
 ## References
 

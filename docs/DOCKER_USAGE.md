@@ -62,7 +62,7 @@ docker-compose --profile minimal up --build
 
 ---
 
-### 3. Backend + AllegroGraph Only (No Frontend)
+### 5. Backend + AllegroGraph Only (No Frontend)
 
 Useful for API-only access or custom frontend:
 
@@ -76,7 +76,7 @@ docker-compose --profile backend --profile allegrograph up --build
 
 ---
 
-### 4. Individual Services
+### 6. Individual Services
 
 Start one service at a time:
 

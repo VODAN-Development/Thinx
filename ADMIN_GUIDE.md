@@ -3,19 +3,19 @@
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 1. [Overview](#overview)
 2. [System Requirements](#system-requirements)
-3. [Installation & Deployment](#installation--deployment)
+3. [Installation and Deployment](#installation-and-deployment)
 4. [Configuration](#configuration)
 5. [User Management](#user-management)
 6. [Database Management](#database-management)
-7. [Security & Access Control](#security--access-control)
-8. [Monitoring & Maintenance](#monitoring--maintenance)
-9. [Backup & Recovery](#backup--recovery)
+7. [Security and Access Control](#security-and-access-control)
+8. [Monitoring and Maintenance](#monitoring-and-maintenance)
+9. [Backup and Recovery](#backup-and-recovery)
 10. [Troubleshooting](#troubleshooting)
-11. [Scaling & Performance](#scaling--performance)
+11. [Scaling and Performance](#scaling-and-performance)
 
 ---
 
@@ -24,9 +24,9 @@
 ### Purpose of This Guide
 
 This guide is for system administrators responsible for:
-- Deploying Thinx in a central/production environment
+- Deploying Thinx in central or production environments
 - Managing user accounts and access
-- Maintaining the database and services
+- Maintaining database and services
 - Ensuring security and compliance
 - Supporting researchers using the platform
 
@@ -56,8 +56,8 @@ Thinx consists of three main components:
 ```
 
 **Optional Components:**
-- **Ollama** (for AI Smart Mapper): Port 11434
-- **Reverse Proxy** (Nginx/Apache): For HTTPS/SSL
+- Ollama (for AI Smart Mapper): Port 11434
+- Reverse Proxy (Nginx/Apache): For HTTPS/SSL
 
 ---
 
@@ -91,40 +91,40 @@ Thinx consists of three main components:
 - Modern web browser (for admin interface)
 
 **Operating System:**
-- Linux (Ubuntu 20.04+, RHEL 8+, Debian 11+) - **Recommended**
+- Linux (Ubuntu 20.04+, RHEL 8+, Debian 11+) - Recommended
 - Windows Server 2019+ with WSL2
 - macOS 11+ (for development/testing only)
 
 **Network:**
 - Static IP or DNS name
 - Firewall rules for required ports
-- (Optional) SSL certificate for HTTPS
+- SSL certificate for HTTPS (optional)
 
 ---
 
-## Installation & Deployment
+## Installation and Deployment
 
 ### Quick Deployment (Development/Testing)
 
-1. **Clone the repository:**
+1. Clone the repository:
    ```bash
    git clone https://github.com/Justin2280/DataScienceInPractice.git
    cd DataScienceInPractice
    ```
 
-2. **Run the full system:**
+2. Run the full system:
    ```bash
    docker-compose --profile full up -d
    ```
 
-3. **Access the platform:**
+3. Access the platform:
    - Frontend: http://localhost
    - Backend API: http://localhost:5000
    - AllegroGraph: http://localhost:10035
 
 ### Production Deployment
 
-**📋 Before starting, see the [Production Deployment Checklist](#production-deployment-checklist) at the end of this guide.**
+Note: See the [Production Deployment Checklist](#production-deployment-checklist) at the end of this guide before starting.
 
 #### Step 1: Prepare the Server
 
@@ -250,19 +250,19 @@ exit()
 
 Thinx supports different deployment profiles:
 
-**Full Profile** (All features):
+**Full Profile (All features):**
 ```bash
 docker-compose --profile full up -d
 ```
 Includes: Frontend, Backend, AllegroGraph, Ollama
 
-**No-AI Profile** (Without AI features):
+**No-AI Profile (Without AI features):**
 ```bash
 docker-compose --profile no-ai up -d
 ```
 Includes: Frontend, Backend, AllegroGraph
 
-**Minimal Profile** (Core only):
+**Minimal Profile (Core only):**
 ```bash
 docker-compose up -d
 ```
@@ -270,7 +270,7 @@ Includes: Frontend, Backend (requires external AllegroGraph)
 
 ### Application Configuration
 
-**backend/config.py** - Main configuration file:
+`backend/config.py` - Main configuration file:
 
 ```python
 import os
@@ -383,10 +383,10 @@ def create_user(username, password):
     user_manager = UserManager(Path('backend/data/users.json'))
     try:
         user = user_manager.create_user(username, password)
-        print(f"✅ User created successfully: {user['username']}")
+        print(f"User created successfully: {user['username']}")
         print(f"   User ID: {user['id']}")
     except ValueError as e:
-        print(f"❌ Error: {e}")
+        print(f"Error: {e}")
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -457,7 +457,7 @@ print('Password reset successful')
 
 By default, the platform allows self-registration. To disable:
 
-**backend/app.py** - Comment out or remove the register endpoint:
+`backend/app.py` - Comment out or remove the register endpoint:
 
 ```python
 # @app.route('/api/register', methods=['POST'])
@@ -555,7 +555,7 @@ curl -X POST http://localhost:10035/repositories/humantrafficking/export \
 
 ---
 
-## Security & Access Control
+## Security and Access Control
 
 ### Security Best Practices
 
@@ -641,7 +641,7 @@ curl -X POST http://localhost:10035/repositories/humantrafficking/export \
 
 ---
 
-## Monitoring & Maintenance
+## Monitoring and Maintenance
 
 ### Health Checks
 
@@ -757,7 +757,7 @@ sudo crontab -e
 
 ---
 
-## Backup & Recovery
+## Backup and Recovery
 
 ### Backup Strategy
 
@@ -925,7 +925,7 @@ curl http://localhost:11434/api/tags
 
 ---
 
-## Scaling & Performance
+## Scaling and Performance
 
 ### Horizontal Scaling
 
@@ -973,14 +973,14 @@ services:
 ### Monitoring Tools
 
 **Recommended tools:**
-- **Prometheus + Grafana**: Metrics and dashboards
-- **ELK Stack**: Log aggregation and analysis
-- **Uptime Kuma**: Uptime monitoring
-- **cAdvisor**: Container metrics
+- Prometheus + Grafana: Metrics and dashboards
+- ELK Stack: Log aggregation and analysis
+- Uptime Kuma: Uptime monitoring
+- cAdvisor: Container metrics
 
 ---
 
-## Support & Maintenance Contacts
+## Support and Maintenance Contacts
 
 ### Documentation
 - Main README: `/opt/thinx/README.md`
@@ -1000,7 +1000,7 @@ services:
 
 ## Production Deployment Checklist
 
-Use this checklist before deploying Thinx to production. Check off each item as you complete it.
+Use this checklist before deploying Thinx to production.
 
 ### Pre-Deployment
 
@@ -1082,7 +1082,7 @@ Use this checklist before deploying Thinx to production. Check off each item as 
 - [ ] Query responses under 5 seconds (for sample data)
 - [ ] Multiple concurrent users can work without issues
 
-### Monitoring & Maintenance
+### Monitoring and Maintenance
 
 **Monitoring Setup:**
 - [ ] Configured health check monitoring
@@ -1091,7 +1091,7 @@ Use this checklist before deploying Thinx to production. Check off each item as 
 - [ ] Set up uptime monitoring (optional)
 
 **Backup Configuration:**
-- [ ] Created backup script (see [Backup & Recovery](#backup--recovery) above)
+- [ ] Created backup script (see Backup and Recovery above)
 - [ ] Tested backup and restore procedure
 - [ ] Scheduled automatic daily backups (cron)
 - [ ] Verified backup storage location and retention
@@ -1123,7 +1123,7 @@ Use this checklist before deploying Thinx to production. Check off each item as 
 - [ ] Monitor database size growth
 - [ ] Track user registrations and usage
 
-### Compliance & Governance (if applicable)
+### Compliance and Governance (if applicable)
 
 **GDPR Compliance:**
 - [ ] Documented data processing activities

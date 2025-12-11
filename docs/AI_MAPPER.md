@@ -1,19 +1,19 @@
-# AI Smart Mapper Guide for Researchers
+# AI Smart Mapper Guide
 
-## What Is This?
+## Overview
 
-The **AI Smart Mapper** is a tool that automatically organizes your data columns so they match Thinx's standard format (the Common Data Model). Instead of manually renaming dozens of columns, the AI does it for you in seconds.
+The AI Smart Mapper is a tool that automatically organizes data columns to match Thinx's standard format (the Common Data Model). Instead of manually renaming columns, the AI performs this task automatically.
 
-### Why Would I Use This?
+### Purpose
 
-**The Problem:** Your interview data might have columns like:
+**Problem:** Interview data often has columns like:
 - `"name_of_victim"`, `"victim name"`, `"Name"`, `"respondent_name"`
 
-**But Thinx expects:** `Victim.name`
+**Thinx expects:** `Victim.name`
 
-**The Solution:** The AI reads your column names, understands what they mean, and suggests the correct standard names. This saves hours of tedious work!
+**Solution:** AI reads column names, understands their meaning, and suggests correct standard names.
 
-### Real-World Example
+### Example
 
 **Your data (before):**
 ```
@@ -28,53 +28,53 @@ age | gender | country | trafficker_name | incident_date
 - `trafficker_name` → `Trafficker.name`
 - `incident_date` → `Incident.date`
 
-**Click "Apply" and your data is ready to use!**
+Click "Apply" and data is ready to use.
 
 ---
 
-## How It Works (Simple Explanation)
+## How It Works
 
-Think of the AI as a smart assistant that:
+The AI functions as an automated assistant that:
 
-1. **Reads** your column names (e.g., "age", "victim_gender", "nationality")
-2. **Compares** them to Thinx's standard format
-3. **Suggests** the best match (e.g., "age" → "Victim.age")
-4. **Applies** the renaming when you approve
+1. Reads column names (e.g., "age", "victim_gender", "nationality")
+2. Compares them to Thinx's standard format
+3. Suggests the best match (e.g., "age" → "Victim.age")
+4. Applies renaming when approved
 
-### 🔒 Privacy & Security
+### Privacy and Security
 
-**Important:** The AI runs **entirely on your computer** (or your organization's server). Your sensitive research data:
-- ✅ Never leaves your system
-- ✅ Never goes to the internet
-- ✅ Never touches external AI services like ChatGPT or Claude
-- ✅ Is GDPR compliant by design
+**Important:** The AI runs entirely on local infrastructure. Your sensitive research data:
+- Never leaves your system
+- Never connects to the internet
+- Never touches external AI services like ChatGPT or Claude
+- Is GDPR compliant by design
 
 This is called "local AI" or "on-premise AI" - the model runs in a Docker container on your own hardware.
 
-## Step-by-Step Guide
+## Prerequisites
 
-### Prerequisites
+Before starting:
+- Thinx running with `--profile full` (includes AI)
+- At least 2GB free disk space (for AI model)
+- Data file ready (Excel or CSV format)
 
-Before you start, make sure:
-- ✅ Thinx is running with `--profile full` (includes the AI)
-- ✅ You have at least 2GB free disk space (for AI model)
-- ✅ You have a data file ready (Excel or CSV format)
-
-**Not sure if AI is enabled?** When you started Thinx, you should have used:
+To verify AI is enabled:
 ```bash
 docker-compose --profile full up --build
 ```
+
+## Step-by-Step Guide
 
 ### Step 1: Check if AI Is Available
 
 1. Open Thinx at http://localhost
 2. Upload a data file (or use test data from `Mock data/` folder)
-3. Go to **Step 3: Schema & Validation**
-4. Look for the **"AI Smart Mapper"** section
+3. Go to Step 3: Schema & Validation
+4. Look for the "AI Smart Mapper" section
 
-**✅ If you see it:** Great! Continue to Step 2.
+**If you see it:** Continue to Step 2.
 
-**❌ If you don't see it:**
+**If you don't see it:**
 ```bash
 # Check if Ollama is running
 docker ps
@@ -86,39 +86,37 @@ docker-compose --profile full up -d
 
 ### Step 2: Download an AI Model
 
-**What is a "model"?** Think of it like downloading a brain for the AI. Different models have different:
-- **Size** (how much disk space they need)
-- **Speed** (how fast they process)
-- **Accuracy** (how good their suggestions are)
+**What is a "model"?** A downloaded component that provides intelligence to the AI. Different models have different:
+- **Size** (disk space required)
+- **Speed** (processing time)
+- **Accuracy** (quality of suggestions)
 
-#### 🎯 Which Model Should I Choose?
+#### Which Model to Choose
 
-**For most researchers, we recommend:** `llama3.2`
+**For most researchers:** `llama3.2`
 
 | Model Name | Size | Speed | Accuracy | Best For |
 |-----------|------|-------|----------|----------|
-| **llama3.2** ⭐ | 2GB | Fast | Good | **Start here** - best balance |
+| **llama3.2** | 2GB | Fast | Good | Standard recommendation |
 | **phi3** | 2.3GB | Very Fast | Good | Older computers |
 | **mistral** | 4GB | Medium | Excellent | Better results needed |
 | **gemma2:2b** | 1.6GB | Very Fast | Decent | Quick testing |
 | **llama3:8b** | 4.7GB | Slow | Excellent | Maximum accuracy |
 
-**💡 Recommendation:** If this is your first time, choose **llama3.2**. It's the sweet spot between size, speed, and quality.
+**Recommendation:** If this is your first time, choose **llama3.2**. It provides balanced performance.
 
 #### How to Download (Using the Interface)
 
-1. In **Step 3: Schema & Validation**, find the **"Download New Model"** section
+1. In Step 3: Schema & Validation, find the "Download New Model" section
 2. In the text box, type: `llama3.2`
-3. Click the **"Download"** button
-4. **Wait patiently** - you'll see a progress message
-   - ⏱️ This takes 5-15 minutes (downloading 2GB file)
-   - ☕ Good time for a coffee break!
-5. When complete, you'll see: ✅ "Model downloaded successfully"
-6. Click **"Refresh"** - your model now appears in the dropdown
+3. Click the "Download" button
+4. Wait 5-15 minutes (downloading 2GB file)
+5. When complete: "Model downloaded successfully"
+6. Click "Refresh" - your model appears in the dropdown
 
-**💡 Tip:** The download only happens once. After that, the model is saved and ready to use instantly.
+Note: The download only happens once. After that, the model is saved and ready to use instantly.
 
-#### Alternative: Download via Command Line (Advanced)
+#### Alternative: Download via Command Line
 
 If you prefer using the terminal:
 
@@ -132,73 +130,73 @@ ollama pull llama3.2
 
 ### Step 3: Upload Your Data
 
-1. Go to **Step 2: Upload Data**
-2. Click **"Choose File"** or drag-and-drop
+1. Go to Step 2: Upload Data
+2. Click "Choose File" or drag-and-drop
 3. Select your Excel or CSV file
-4. Click **"Upload"**
-5. Wait for confirmation: ✅ "File uploaded successfully"
+4. Click "Upload"
+5. Wait for confirmation: "File uploaded successfully"
 
-**What file formats work?**
-- ✅ `.xlsx` (Excel)
-- ✅ `.csv` (Comma-separated values)
-- ✅ `.json` (Advanced users)
+**Supported file formats:**
+- `.xlsx` (Excel)
+- `.csv` (Comma-separated values)
+- `.json` (Advanced users)
 
 ### Step 4: Run the AI Mapper
 
-1. Go to **Step 3: Schema & Validation**
-2. Find the **"AI Smart Mapper"** section
-3. Click the **dropdown menu** and select your model (e.g., `llama3.2`)
-4. Click **"Suggest Mappings"**
-5. **Wait 30-60 seconds** while the AI analyzes your data
-   - You'll see a loading spinner
-   - The AI is reading your column names and comparing them to the standard format
-6. **Review the suggestions** in the table that appears
+1. Go to Step 3: Schema & Validation
+2. Find the "AI Smart Mapper" section
+3. Click the dropdown menu and select your model (e.g., `llama3.2`)
+4. Click "Suggest Mappings"
+5. Wait 30-60 seconds while AI analyzes data
+   - Loading spinner appears
+   - AI reads column names and compares to standard format
+6. Review the suggestions in the table that appears
 
 ### Step 5: Review and Apply Suggestions
 
-The AI will show a table like this:
+The AI shows a table like this:
 
 | Your Column Name | AI Suggestion | Confidence |
 |-----------------|---------------|------------|
-| `age` | `Victim.age` | ✅ High |
-| `victim_gender` | `Victim.gender` | ✅ High |
-| `nationality` | `Victim.nationality` | ✅ High |
-| `trafficker_name` | `Trafficker.name` | ⚠️ Medium |
+| `age` | `Victim.age` | High |
+| `victim_gender` | `Victim.gender` | High |
+| `nationality` | `Victim.nationality` | High |
+| `trafficker_name` | `Trafficker.name` | Medium |
 
 **What to check:**
-- ✅ **Green/High confidence:** Usually correct, safe to accept
-- ⚠️ **Yellow/Medium confidence:** Double-check these
-- ❌ **Red/Low confidence:** Review carefully or skip
+- Green/High confidence: Usually correct, safe to accept
+- Yellow/Medium confidence: Double-check these
+- Red/Low confidence: Review carefully or skip
 
-**To apply the changes:**
-1. Click **"Apply Mapping to File"** at the bottom
+**To apply changes:**
+1. Click "Apply Mapping to File" at the bottom
 2. Your file is automatically restructured
-3. You'll see: ✅ "Mappings applied successfully"
-4. Continue to the next step in the workflow
+3. See: "Mappings applied successfully"
+4. Continue to next step in workflow
 
 ---
 
-## Frequently Asked Questions (FAQ)
+## Frequently Asked Questions
 
 ### General Questions
 
 **Q: Do I need to download a model every time?**  
-A: No! Once downloaded, the model stays on your computer. You only download once.
+A: No. Once downloaded, the model stays on your computer. You only download once.
 
 **Q: Can I use multiple models?**  
-A: Yes! Download several and try them to see which gives the best results.
+A: Yes. Download several and try them to see which gives the best results.
 
 **Q: Does this cost money?**  
 A: No, all models are free and open-source.
 
 **Q: Is my data sent to the internet?**  
-A: No! Everything runs locally on your computer. Your data never leaves your system.
+A: No. Everything runs locally on your computer. Your data never leaves your system.
 
 **Q: How long does mapping take?**  
 A: Usually 30-60 seconds for typical datasets (up to 100 columns).
 
 **Q: Can I undo if the AI makes mistakes?**  
-A: Yes! Keep a backup of your original file, or simply re-upload it.
+A: Yes. Keep a backup of your original file, or simply re-upload it.
 
 ### Troubleshooting
 
@@ -210,7 +208,7 @@ docker-compose --profile full up --build
 ```
 
 **Q: Model download is stuck or very slow?**  
-A: Check your internet connection. Large models (4GB+) take time. Be patient!
+A: Check your internet connection. Large models (4GB+) take time.
 
 **Q: "Out of memory" error?**  
 A: Your computer might not have enough RAM. Try a smaller model like `gemma2:2b`.
@@ -225,13 +223,13 @@ docker-compose logs ollama
 ```
 
 **Q: Can I manually fix AI suggestions?**  
-A: Yes! You can manually edit the mapping suggestions before applying them (feature may depend on implementation).
+A: Yes. You can manually edit the mapping suggestions before applying them (feature depends on implementation).
 
 ---
 
 ## Understanding AI Mapping Results
 
-When the AI finishes, you'll see a detailed breakdown of its suggestions.
+When the AI finishes, you see a detailed breakdown of its suggestions.
 
 ### Interpreting the Output
 
@@ -245,9 +243,9 @@ The AI provides three pieces of information for each column:
 
 | Level | What It Means | What You Should Do |
 |-------|--------------|-------------------|
-| **✅ High (80-100%)** | AI is very confident | Usually safe to accept |
-| **⚠️ Medium (50-79%)** | AI thinks it's probably right | Review carefully |
-| **❌ Low (0-49%)** | AI is guessing | Double-check or manually assign |
+| **High (80-100%)** | AI is very confident | Usually safe to accept |
+| **Medium (50-79%)** | AI thinks it's probably right | Review carefully |
+| **Low (0-49%)** | AI is guessing | Double-check or manually assign |
 
 ### Common Mapping Patterns
 
@@ -279,22 +277,27 @@ Column Mapping Results:
 ----------------------
 Original Column: "age"
 Suggested Mapping: "Victim.age"
-Confidence: 95% ✅ High
+Confidence: 95% (High)
 
 Original Column: "gender of victim"
 Suggested Mapping: "Victim.gender"
-Confidence: 90% ✅ High
+Confidence: 90% (High)
 
 Original Column: "country"
 Suggested Mapping: "Victim.nationality"
-Confidence: 65% ⚠️ Medium
-(Note: Could also be trafficker nationality - please verify)
+Confidence: 65% (Medium)
+Note: Could also be trafficker nationality - please verify
 
 Original Column: "date"
 Suggested Mapping: "Incident.date"
-Confidence: 45% ❌ Low
-(Note: Ambiguous - could be interview date or incident date)
+Confidence: 45% (Low)
+Note: Ambiguous - could be interview date or incident date
 ```
+
+### JSON Output Format
+
+```json
+{
   "victim_id": "victim_id",
   "name": "victim_name", 
   "age": "victim_age",
@@ -336,8 +339,8 @@ See `hds_cdm.ttl` for the complete schema definition.
 
 The AI works better with clear column names:
 
-✅ **Good**: `victim_age`, `date_of_birth`, `country_of_origin`  
-❌ **Poor**: `col1`, `data`, `field_x`
+**Good**: `victim_age`, `date_of_birth`, `country_of_origin`  
+**Poor**: `col1`, `data`, `field_x`
 
 ### 2. Review Before Applying
 
@@ -475,13 +478,13 @@ ollama pull codellama
 ollama pull aya
 ```
 
-## Privacy & Security
+## Privacy and Security
 
 ### Data Privacy
 
-✅ **Local Processing**: All AI processing happens locally  
-✅ **No External Calls**: Data never leaves your infrastructure  
-✅ **GDPR Compliant**: Suitable for sensitive human trafficking data
+- Local Processing: All AI processing happens locally
+- No External Calls: Data never leaves your infrastructure
+- GDPR Compliant: Suitable for sensitive human trafficking data
 
 ### Model Source
 
@@ -602,15 +605,6 @@ Content-Type: application/json
 2. **Batch Processing**: Process multiple files with the same model to avoid re-loading
 3. **Resource Allocation**: Allocate at least 4GB RAM to the Ollama container for smooth operation
 4. **SSD Storage**: Store models on SSD for faster loading
-
-## Future Enhancements
-
-Planned features:
-- [ ] Model download progress indicator
-- [ ] Confidence scores for each mapping
-- [ ] Batch mapping across multiple files
-- [ ] Custom mapping rules/templates
-- [ ] Fine-tuning on domain-specific data
 
 ## Support
 

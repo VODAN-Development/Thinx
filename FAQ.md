@@ -1,30 +1,30 @@
 # Thinx - Frequently Asked Questions (FAQ)
 
-**🎯 Quick Navigation:**
-- [🌟 Absolute Beginner Questions](#-absolute-beginner-questions)
+**Quick Navigation:**
+- [Absolute Beginner Questions](#absolute-beginner-questions)
 - [Getting Started](#getting-started)
-- [Installation & Setup](#installation--setup)
+- [Installation and Setup](#installation-and-setup)
 - [Using the Interface](#using-the-interface)
-- [Data & Connections](#data--connections)
+- [Data and Connections](#data-and-connections)
 - [AI Smart Mapper](#ai-smart-mapper)
 - [Troubleshooting Errors](#troubleshooting-errors)
-- [Privacy & Security](#privacy--security)
+- [Privacy and Security](#privacy-and-security)
 - [Technical Questions](#technical-questions)
 
 ---
 
-## 🌟 Absolute Beginner Questions
+## Absolute Beginner Questions
 
 ### I've never used anything like this before. Where do I start?
 
-**Don't worry! Here's your step-by-step path:**
+Step-by-step path:
 
-1. **Read this first:** [QUICK_START.md](QUICK_START.md) - takes 5 minutes
-2. **Install Docker:** [Docker Desktop](https://docker.com/get-started) - takes 10 minutes
-3. **Start Thinx:** Run one command in terminal - takes 2-3 minutes
-4. **Watch it work:** Open browser to http://localhost - you're done!
+1. Read [QUICK_START.md](QUICK_START.md) - takes 5 minutes
+2. Install Docker: [Docker Desktop](https://docker.com/get-started) - takes 10 minutes
+3. Start Thinx: Run one command in terminal - takes 2-3 minutes
+4. Access application: Open browser to http://localhost
 
-**Total time from zero to running: 20 minutes**
+Total time from zero to running: 20 minutes
 
 ### What is a "terminal" or "command prompt"?
 
@@ -32,7 +32,7 @@
 
 **Mac:** Press `Command + Space`, type `terminal`, press Enter. A window opens.
 
-**That's it!** This window lets you type commands to your computer.
+This window lets you type commands to your computer.
 
 ### What does "localhost" mean?
 
@@ -40,7 +40,7 @@
 
 When you see `http://localhost`, it means "open this website that's running on MY computer, not the internet."
 
-**Analogy:** Like having a private website that only you can see, running on your laptop.
+Analogy: Like having a private website that only you can see, running on your laptop.
 
 ### Do I need to be connected to the internet?
 
@@ -58,24 +58,24 @@ When you see `http://localhost`, it means "open this website that's running on M
 
 **Third:** Contact your system administrator or research coordinator
 
-**Remember:** You can't break anything! If stuck, just close everything and restart.
+Note: You can't break anything. If stuck, close everything and restart.
 
 ### I'm not good with computers. Is this for me?
 
-**Yes!** Thinx is designed for researchers, not programmers.
+Thinx is designed for researchers, not programmers.
 
 **You don't need to know:**
-- ❌ How to code
-- ❌ How databases work
-- ❌ What RDF means
-- ❌ How Docker works
+- How to code
+- How databases work
+- What RDF means
+- How Docker works
 
 **You only need to know:**
-- ✅ How to open files
-- ✅ How to click buttons
-- ✅ How to fill in forms
+- How to open files
+- How to click buttons
+- How to fill in forms
 
-**If you can use Excel or Word, you can use Thinx!**
+If you can use Excel or Word, you can use Thinx.
 
 ---
 
@@ -83,51 +83,51 @@ When you see `http://localhost`, it means "open this website that's running on M
 
 ### What is Thinx?
 
-Thinx is a web-based platform that helps researchers analyze human trafficking and migration data. It lets you:
-- Connect to research databases without programming
-- Visualize victim data with dashboards and charts
-- Use AI to automatically organize interview data
-- Run queries to find patterns and insights
+Thinx is a web-based platform that helps researchers analyze human trafficking and migration data. It provides:
+- Connection to research databases without programming
+- Visualization of victim data with dashboards and charts
+- AI to automatically organize interview data
+- Query tools to find patterns and insights
 
-**Think of it as:** A user-friendly interface for exploring complex research databases.
+Think of it as a user-friendly interface for exploring complex research databases.
 
 ### Who is Thinx for?
 
-- 👨‍🔬 **Social science researchers** studying human trafficking
-- 📊 **Data analysts** working with interview data
-- 🏛️ **NGO workers** analyzing humanitarian data
-- 🎓 **Graduate students** learning data science methods
+- Social science researchers studying human trafficking
+- Data analysts working with interview data
+- NGO workers analyzing humanitarian data
+- Graduate students learning data science methods
 
-**No programming experience required!**
+No programming experience required.
 
 ### Do I need to know programming?
 
-**No!** Thinx is designed for non-technical users. You can:
-- ✅ Click buttons to connect to databases
-- ✅ Use dropdowns to select options
-- ✅ Fill in forms to configure settings
-- ✅ View data in tables and charts
+No. Thinx is designed for non-technical users. You can:
+- Click buttons to connect to databases
+- Use dropdowns to select options
+- Fill in forms to configure settings
+- View data in tables and charts
 
-**Optional:** Advanced users can write custom SPARQL queries, but it's not required.
+Optional: Advanced users can write custom SPARQL queries, but it's not required.
 
 ### How long does it take to get started?
 
-- ⏱️ **Installation:** 5-10 minutes (first time)
-- ⏱️ **Setup:** 2-3 minutes (create connection)
-- ⏱️ **Learning:** 15-30 minutes (explore features)
+- Installation: 5-10 minutes (first time)
+- Setup: 2-3 minutes (create connection)
+- Learning: 15-30 minutes (explore features)
 
-**Total:** You can be exploring data in under 20 minutes!
+Total: You can be exploring data in under 20 minutes.
 
 ---
 
-## Installation & Setup
+## Installation and Setup
 
 ### What do I need to install?
 
 **Only one thing:** Docker Desktop
 
 - **Download:** [docker.com/get-started](https://docker.com/get-started)
-- **Size:** ~500MB download
+- **Size:** Approximately 500MB download
 - **Requirements:** 
   - Windows 10/11 (Pro, Enterprise, or Education) OR Windows 10 Home with WSL2
   - Mac OS 10.15 or newer
@@ -138,28 +138,28 @@ Everything else runs inside Docker containers.
 
 ### Do I need to install Python, Node.js, or other tools?
 
-**No!** Docker includes everything you need:
+No. Docker includes everything you need:
 - Python (backend)
 - Node.js (frontend)
 - Database (AllegroGraph)
 - AI models (Ollama)
 
-**You don't install anything manually.**
+You don't install anything manually.
 
 ### How much disk space does Thinx need?
 
-| Component | Size | When It's Needed |
-|-----------|------|------------------|
-| Docker images | ~2-3 GB | Always (first time) |
+| Component | Size | When Needed |
+|-----------|------|-------------|
+| Docker images | 2-3 GB | Always (first time) |
 | AI model (optional) | 2-5 GB | Only if using AI mapper |
 | Your data | Varies | Depends on dataset size |
 | **Total** | **4-10 GB** | |
 
-**Tip:** Use `docker system prune` to clean up old containers and free space.
+Tip: Use `docker system prune` to clean up old containers and free space.
 
 ### Can I run Thinx without Docker?
 
-**Not recommended for non-technical users.** Docker is the easiest way.
+Not recommended for non-technical users. Docker is the easiest way.
 
 **For developers:** Yes, you can run components locally:
 - Frontend: `npm install && npm run dev`
@@ -185,23 +185,23 @@ See [README.md - Developer Guide](README.md#developer-guide) for details.
 
 ### How do I start Thinx?
 
-1. **Open terminal/command prompt:**
+1. Open terminal/command prompt:
    - Windows: Search for "PowerShell"
    - Mac: Search for "Terminal"
 
-2. **Navigate to project folder:**
+2. Navigate to project folder:
    ```bash
    cd path/to/DataScienceInPractice
    ```
 
-3. **Start Docker containers:**
+3. Start Docker containers:
    ```bash
    docker-compose --profile full up
    ```
 
-4. **Open your browser:** http://localhost
+4. Open your browser: http://localhost
 
-**Detailed instructions:** See [QUICK_START.md](QUICK_START.md)
+Detailed instructions: See [QUICK_START.md](QUICK_START.md)
 
 ### How do I stop Thinx?
 
@@ -221,7 +221,7 @@ docker-compose stop
 
 ### Can I access Thinx from another computer?
 
-**On the same network:** Yes!
+**On the same network:** Yes
 
 1. Find your computer's IP address:
    - Windows: `ipconfig` (look for IPv4 Address)
@@ -234,27 +234,27 @@ docker-compose stop
 
 **Example:** `http://192.168.1.100`
 
-**⚠️ Security Warning:** This exposes Thinx to your local network. Only use on trusted networks.
+**Security Warning:** This exposes Thinx to your local network. Only use on trusted networks.
 
 ### What browsers work best?
 
 | Browser | Status | Notes |
 |---------|--------|-------|
-| **Chrome** | ✅ Recommended | Fully tested |
-| **Firefox** | ✅ Recommended | Fully tested |
-| **Edge** | ✅ Supported | Works well |
-| **Safari** | ✅ Supported | Mac/iOS |
-| **Internet Explorer** | ❌ Not supported | Too old |
+| Chrome | Recommended | Fully tested |
+| Firefox | Recommended | Fully tested |
+| Edge | Supported | Works well |
+| Safari | Supported | Mac/iOS |
+| Internet Explorer | Not supported | Too old |
 
 **Minimum versions:** Released in the last 2 years
 
 ---
 
-## Data & Connections
+## Data and Connections
 
 ### What is a "connection"?
 
-A **connection** is like a bookmark to a research database. It stores:
+A connection is like a bookmark to a research database. It stores:
 - Where the database is located (server address)
 - How to log in (username and password)
 - Which dataset to access (repository name)
@@ -264,10 +264,10 @@ You create connections so Thinx knows where to find your data.
 ### Where do I get connection credentials?
 
 From your:
-- **Research coordinator** (academic projects)
-- **Data provider** (NGO or research institution)
-- **IT department** (organizational databases)
-- **Project documentation** (if self-hosting)
+- Research coordinator (academic projects)
+- Data provider (NGO or research institution)
+- IT department (organizational databases)
+- Project documentation (if self-hosting)
 
 **Typically includes:**
 - Server URL (e.g., `192.168.1.100` or `research.university.edu`)
@@ -277,7 +277,7 @@ From your:
 
 ### Can I connect to multiple databases?
 
-**Yes!** You can save multiple connections and switch between them.
+Yes. You can save multiple connections and switch between them.
 
 **Example use case:**
 - Connection 1: "Libya Study 2023"
@@ -289,9 +289,9 @@ Click "Activate" on any connection to view that dataset.
 ### What data formats does Thinx support?
 
 **For uploading/processing:**
-- ✅ CSV (Comma-separated values)
-- ✅ Excel (`.xlsx`, `.xls`)
-- ✅ JSON (for advanced users)
+- CSV (Comma-separated values)
+- Excel (`.xlsx`, `.xls`)
+- JSON (for advanced users)
 
 **For storage:**
 - RDF (Resource Description Framework) - handled automatically
@@ -299,7 +299,7 @@ Click "Activate" on any connection to view that dataset.
 
 ### Can I upload my own data?
 
-**Yes!** Follow this workflow:
+Yes. Follow this workflow:
 
 1. **Prepare your data:**
    - Format: CSV or Excel
@@ -323,7 +323,7 @@ Click "Activate" on any connection to view that dataset.
    - Use `push_to_allegrograph.py` script
    - Or import through AllegroGraph interface
 
-**See:** [README.md - Data Processing Pipeline](README.md#data-processing-pipeline)
+See [README.md - Data Processing Pipeline](README.md#data-processing-pipeline)
 
 ### What is RDF and why do I need it?
 
@@ -336,11 +336,11 @@ Click "Activate" on any connection to view that dataset.
 - RDF: `Ahmed -> is a -> Victim`, `Ahmed -> has age -> 25`, `Ahmed -> has nationality -> Syrian`
 
 **Why it matters:**
-- ✅ Better for complex relationships (victim → incident → trafficker → location)
-- ✅ Enables powerful queries (find all victims who crossed border X)
-- ✅ Standard format for research data sharing
+- Better for complex relationships (victim → incident → trafficker → location)
+- Enables powerful queries (find all victims who crossed border X)
+- Standard format for research data sharing
 
-**Do I need to understand RDF?** No! Thinx handles it automatically.
+**Do I need to understand RDF?** No. Thinx handles it automatically.
 
 ---
 
@@ -362,15 +362,15 @@ Victim.name | Victim.age | Victim.gender | Victim.nationality | Incident.date | 
 
 ### Is my data sent to the internet?
 
-**No!** The AI runs **100% locally** on your computer (or your organization's server).
+No. The AI runs 100% locally on your computer (or your organization's server).
 
 **How we ensure privacy:**
-- ✅ AI model runs in Docker container
-- ✅ No external API calls
-- ✅ No data uploaded to cloud services
-- ✅ No internet connection required (after model download)
+- AI model runs in Docker container
+- No external API calls
+- No data uploaded to cloud services
+- No internet connection required (after model download)
 
-**This is called "local AI" or "on-premise AI".**
+This is called "local AI" or "on-premise AI."
 
 ### Which AI model should I use?
 
@@ -378,13 +378,13 @@ Victim.name | Victim.age | Victim.gender | Victim.nationality | Incident.date | 
 
 | Model | Size | Speed | Accuracy | When to Use |
 |-------|------|-------|----------|-------------|
-| **llama3.2** ⭐ | 2GB | Fast | Good | Start here - best balance |
+| **llama3.2** | 2GB | Fast | Good | Start here - best balance |
 | **phi3** | 2.3GB | Very Fast | Good | Older/slower computers |
 | **mistral** | 4GB | Medium | Excellent | Need better accuracy |
 | **gemma2:2b** | 1.6GB | Very Fast | Decent | Quick testing only |
 | **llama3:8b** | 4.7GB | Slow | Excellent | Maximum accuracy needed |
 
-**Don't overthink it!** Try `llama3.2` first - it works well for 90% of cases.
+Don't overthink it. Try `llama3.2` first - it works well for 90% of cases.
 
 ### How long does AI mapping take?
 
@@ -394,12 +394,12 @@ Victim.name | Victim.age | Victim.gender | Victim.nationality | Incident.date | 
 | Analyze your data | 30-90 seconds |
 | Apply mappings | 1-2 seconds |
 
-**Total first time:** ~20 minutes  
-**Subsequent uses:** ~1 minute
+**Total first time:** Approximately 20 minutes  
+**Subsequent uses:** Approximately 1 minute
 
 ### Can I manually fix AI suggestions?
 
-**Feature may vary by implementation.** Typically:
+Feature may vary by implementation. Typically:
 
 **Option 1 - Edit before applying:**
 - Review suggestion table
@@ -548,8 +548,8 @@ docker-compose restart backend
 
 **Option 1 - Better column names:**
 Your column names might be too vague:
-- ❌ `col1`, `field_a`, `data`
-- ✅ `victim_age`, `incident_type`, `trafficker_name`
+- Bad: `col1`, `field_a`, `data`
+- Good: `victim_age`, `incident_type`, `trafficker_name`
 
 Rename columns in Excel/CSV before uploading.
 
@@ -564,17 +564,17 @@ Rename columns in Excel/CSV before uploading.
 
 ---
 
-## Privacy & Security
+## Privacy and Security
 
 ### Is Thinx GDPR compliant?
 
-**Yes**, when used correctly:
+Yes, when used correctly:
 
-✅ **Data minimization** - Only collect necessary fields  
-✅ **Local processing** - AI runs on your infrastructure  
-✅ **Access control** - Username/password authentication  
-✅ **Anonymization** - System marks sensitive fields  
-✅ **Data retention** - You control data lifecycle
+- Data minimization - Only collect necessary fields
+- Local processing - AI runs on your infrastructure
+- Access control - Username/password authentication
+- Anonymization - System marks sensitive fields
+- Data retention - You control data lifecycle
 
 **Your responsibilities:**
 - Use appropriate consent forms for data collection
@@ -609,38 +609,38 @@ ports:
 
 ### Can I use Thinx for sensitive research data?
 
-**Yes, but with precautions:**
+Yes, but with precautions:
 
-✅ **Do:**
+**Do:**
 - Anonymize data before uploading (remove names, IDs, contact info)
 - Run on secure, institutional servers
 - Use strong passwords for database
 - Enable access logs
 - Follow ethical review board requirements
 
-❌ **Don't:**
+**Don't:**
 - Upload personally identifiable information (PII)
 - Run on public networks (coffee shops, etc.)
 - Share database credentials
 - Use weak passwords
 
-**Consult your ethics board and data protection officer.**
+Consult your ethics board and data protection officer.
 
 ### What data does Thinx collect about me?
 
 **Thinx collects:**
-- ✅ Connection configurations (server addresses, repository names)
-- ✅ Usernames (for authentication)
-- ✅ Hashed passwords (encrypted, not plaintext)
-- ✅ Activity logs (optional, for troubleshooting)
+- Connection configurations (server addresses, repository names)
+- Usernames (for authentication)
+- Hashed passwords (encrypted, not plaintext)
+- Activity logs (optional, for troubleshooting)
 
 **Thinx does NOT collect:**
-- ❌ Your research data (stays in your database)
-- ❌ Usage analytics
-- ❌ Personal information
-- ❌ Telemetry data
+- Your research data (stays in your database)
+- Usage analytics
+- Personal information
+- Telemetry data
 
-**Everything is stored locally in Docker volumes.**
+Everything is stored locally in Docker volumes.
 
 ---
 
@@ -668,7 +668,7 @@ git pull origin main
 docker-compose --profile full up --build
 ```
 
-**Note:** This preserves your data in Docker volumes.
+Note: This preserves your data in Docker volumes.
 
 ### How do I backup my data?
 
@@ -691,7 +691,7 @@ docker run --rm -v datascienceinpractice_agraph_data:/data -v $(pwd):/backup alp
 
 ### Can I run Thinx on a server?
 
-**Yes!** Deploy on:
+Yes. Deploy on:
 - University research servers
 - Cloud VMs (AWS, Azure, Google Cloud)
 - On-premise servers
@@ -731,15 +731,15 @@ docker run --rm -v datascienceinpractice_agraph_data:/data -v $(pwd):/backup alp
 
 ## Still Have Questions?
 
-### 📚 Documentation
+### Documentation
 
-- **[README.md](README.md)** - Complete user guide
-- **[QUICK_START.md](QUICK_START.md)** - Installation guide
-- **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** - Technical details
-- **[docs/AI_MAPPER.md](docs/AI_MAPPER.md)** - AI guide
-- **[Mock data/README.md](Mock data/README.md)** - Test data tutorials
+- [README.md](README.md) - Complete user guide
+- [QUICK_START.md](QUICK_START.md) - Installation guide
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Technical details
+- [docs/AI_MAPPER.md](docs/AI_MAPPER.md) - AI guide
+- [Mock data/README.md](Mock data/README.md) - Test data tutorials
 
-### 🔍 Debugging
+### Debugging
 
 ```bash
 # Check all containers
@@ -758,7 +758,7 @@ docker --version
 docker-compose --version
 ```
 
-### 💬 Get Help
+### Get Help
 
 **Before asking:**
 1. Search this FAQ

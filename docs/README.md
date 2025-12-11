@@ -1,22 +1,22 @@
-# 📚 Thinx - Technical Documentation
+# Thinx - Technical Documentation
 
-Welcome to the **Thinx** technical documentation. This folder contains detailed guides for developers and system administrators.
+Welcome to the Thinx technical documentation. This folder contains detailed guides for developers and system administrators.
 
-> **👉 New user?** Start with [../QUICK_START.md](../QUICK_START.md)  
-> **📖 Looking for user docs?** See [../USER_GUIDE.md](../USER_GUIDE.md)  
-> **🔧 Deploying for a team?** See [../ADMIN_GUIDE.md](../ADMIN_GUIDE.md)
+**New user?** Start with [../QUICK_START.md](../QUICK_START.md)  
+**Looking for user docs?** See [../USER_GUIDE.md](../USER_GUIDE.md)  
+**Deploying for a team?** See [../ADMIN_GUIDE.md](../ADMIN_GUIDE.md)
 
 ---
 
 ## Quick Navigation
 
-| I Am... | Start Here |
-|---------|------------|
-| 🚀 **New User** | [../QUICK_START.md](../QUICK_START.md) |
-| 👨‍🔬 **Researcher** | [../USER_GUIDE.md](../USER_GUIDE.md) |
-| 🔧 **Administrator** | [../ADMIN_GUIDE.md](../ADMIN_GUIDE.md) |
-| 💻 **Developer** | [ARCHITECTURE.md](ARCHITECTURE.md) → [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) |
-| ❓ **Need Help** | [../FAQ.md](../FAQ.md) |
+| User Type | Documentation |
+|-----------|---------------|
+| New User | [../QUICK_START.md](../QUICK_START.md) |
+| Researcher | [../USER_GUIDE.md](../USER_GUIDE.md) |
+| Administrator | [../ADMIN_GUIDE.md](../ADMIN_GUIDE.md) |
+| Developer | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| Support | [../FAQ.md](../FAQ.md) |
 
 ---
 
@@ -24,10 +24,10 @@ Welcome to the **Thinx** technical documentation. This folder contains detailed 
 
 | Document | Purpose | For |
 |----------|---------|-----|
-| **[ARCHITECTURE.md](ARCHITECTURE.md)** | System design & component overview | Developers, Admins |
-| **[AI_MAPPER.md](AI_MAPPER.md)** | AI Smart Mapper setup & usage | Data processors |
-| **[DOCKER_USAGE.md](DOCKER_USAGE.md)** | Docker commands & profiles | Admins, Developers |
-| **[FAIR_DATA_POINT.md](FAIR_DATA_POINT.md)** | FAIR Data Point integration | Researchers, Data owners |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | System design and component overview | Developers, Admins |
+| [AI_MAPPER.md](AI_MAPPER.md) | AI Smart Mapper setup and usage | Data processors |
+| [DOCKER_USAGE.md](DOCKER_USAGE.md) | Docker commands and profiles | Admins, Developers |
+| [FAIR_DATA_POINT.md](FAIR_DATA_POINT.md) | FAIR Data Point integration | Researchers, Data owners |
 
 ---
 
@@ -39,55 +39,52 @@ Welcome to the **Thinx** technical documentation. This folder contains detailed 
 | Set up AI Smart Mapper | [AI_MAPPER.md](AI_MAPPER.md) |
 | Use Docker profiles | [DOCKER_USAGE.md](DOCKER_USAGE.md) |
 | Deploy to production | [../ADMIN_GUIDE.md](../ADMIN_GUIDE.md) |
-| **Use AI to map columns** | [AI_MAPPER.md](AI_MAPPER.md) |
-| **Download AI models** | [AI_MAPPER.md](AI_MAPPER.md#step-2-download-an-ai-model) |
-| **Test with sample data** | [Mock data/README.md](../Mock%20data/README.md) |
-| **Modify the data model** | [CDM Tutorial](../README.md#modifying-the-common-data-model) |
-| **Use the API** | [API Documentation](../README.md#api-documentation) |
-| **Fix a problem** | [Troubleshooting](../README.md#troubleshooting) or [FAQ.md](../FAQ.md) |
-| **Understand architecture** | [ARCHITECTURE.md](ARCHITECTURE.md) |
-| **Process raw data** | [Data Processing Pipeline](../README.md#data-processing-pipeline) |
-| **Deploy with Docker** | [DOCKER_USAGE.md](DOCKER_USAGE.md) |
-| **Migrate from old system** | [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) |
+| Use AI to map columns | [AI_MAPPER.md](AI_MAPPER.md) |
+| Download AI models | [AI_MAPPER.md](AI_MAPPER.md#step-2-download-an-ai-model) |
+| Test with sample data | [../Mock data/README.md](../Mock%20data/README.md) |
+| Modify the data model | [CDM Tutorial](../README.md#modifying-the-common-data-model) |
+| Use the API | [API Documentation](../README.md#api-documentation) |
+| Fix a problem | [Troubleshooting](../README.md#troubleshooting) or [../FAQ.md](../FAQ.md) |
+| Understand architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| Process raw data | [Data Processing Pipeline](../README.md#data-processing-pipeline) |
+| Deploy with Docker | [DOCKER_USAGE.md](DOCKER_USAGE.md) |
 
 ---
 
-## 📂 Project File Structure
+## Project File Structure
 
 ```
 DataScienceInPractice/
-├── README.md                  ⭐ START HERE - Main documentation
-├── QUICK_START.md             🚀 5-minute setup guide
-├── docker-compose.yml         🐳 Container orchestration
-├── start.bat / start.sh       ▶️  Easy startup scripts
+├── README.md                  - Main documentation
+├── QUICK_START.md             - 5-minute setup guide
+├── docker-compose.yml         - Container orchestration
+├── start.bat / start.sh       - Easy startup scripts
 │
-├── docs/                      📚 Technical documentation
-│   ├── README.md             📖 This file
-│   ├── ARCHITECTURE.md       🏗️  System design
-│   ├── DOCKER_USAGE.md       🐳 Docker guide
-│   ├── MIGRATION_GUIDE.md    🔄 Migration instructions
-│   ├── PROJECT_STRUCTURE.md  📁 File organization
-│   ├── IMPLEMENTATION_SUMMARY.md
-│   └── DIAGRAMS.md           📊 Visual diagrams
+├── docs/                      - Technical documentation
+│   ├── README.md             - This file
+│   ├── ARCHITECTURE.md       - System design
+│   ├── DOCKER_USAGE.md       - Docker guide
+│   ├── AI_MAPPER.md          - AI Smart Mapper guide
+│   └── FAIR_DATA_POINT.md    - FAIR Data Point integration
 │
-├── backend/                   🔧 Flask REST API
-│   ├── app.py                💻 Main API application
-│   ├── models.py             📋 Data models & CDM schema
-│   └── requirements.txt      📦 Python dependencies
+├── backend/                   - Flask REST API
+│   ├── app.py                - Main API application
+│   ├── models.py             - Data models and CDM schema
+│   └── requirements.txt      - Python dependencies
 │
-├── frontend/                  🎨 Vue.js interface
+├── frontend/                  - Vue.js interface
 │   └── src/
-│       ├── components/       🧩 Vue components
-│       ├── router/           🛣️  Routing
-│       └── services/         🔌 API client
+│       ├── components/       - Vue components
+│       ├── router/           - Routing
+│       └── services/         - API client
 │
-├── sparql queries/            🔍 Sample SPARQL queries
-└── [data files & notebooks]   📊 Data processing
+├── sparql queries/            - Sample SPARQL queries
+└── [data files & notebooks]   - Data processing
 ```
 
 ---
 
-## 🆘 Need Help?
+## Need Help?
 
 ### Common Problems
 
@@ -100,13 +97,13 @@ DataScienceInPractice/
 
 ### Still Stuck?
 
-1. Check **[Troubleshooting](../README.md#troubleshooting)** section in main README
-2. Review **[DOCKER_USAGE.md](DOCKER_USAGE.md)** for Docker issues
+1. Check [Troubleshooting](../README.md#troubleshooting) section in main README
+2. Review [DOCKER_USAGE.md](DOCKER_USAGE.md) for Docker issues
 3. Check container logs: `docker-compose logs -f`
 
 ---
 
-## 📊 Documentation Quick Stats
+## Documentation Quick Stats
 
 - **Total Documentation Files:** 8
 - **Estimated Total Reading Time:** 2-3 hours (full documentation)
@@ -115,31 +112,28 @@ DataScienceInPractice/
 
 ---
 
-## 🎯 Learning Paths
+## Learning Paths
 
 ### Path 1: "Just Want to Use It" (30 minutes)
 1. [QUICK_START.md](../QUICK_START.md)
-2. [End-User Manual](../README.md#end-user-manual)
-3. Start using the application!
+2. [User Guide](../USER_GUIDE.md)
+3. Start using the application
 
 ### Path 2: "Want to Understand It" (90 minutes)
 1. [README.md](../README.md) - Full read
 2. [ARCHITECTURE.md](ARCHITECTURE.md)
-3. [DIAGRAMS.md](DIAGRAMS.md)
 
 ### Path 3: "Need to Modify It" (2-3 hours)
 1. [README.md](../README.md) - Developer section
 2. [ARCHITECTURE.md](ARCHITECTURE.md)
-3. [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
-4. [CDM Tutorial](../README.md#modifying-the-common-data-model)
-5. [API Documentation](../README.md#api-documentation)
-6. [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
+3. [CDM Tutorial](../README.md#modifying-the-common-data-model)
+4. [API Documentation](../README.md#api-documentation)
 
 ---
 
-## 🔗 Quick Reference Commands
+## Quick Reference Commands
 
-### Starting & Stopping
+### Starting and Stopping
 ```bash
 # Start all services
 docker-compose up
@@ -179,4 +173,4 @@ docker-compose restart backend
 
 ---
 
-**🎯 Ready to start?** → Go to [QUICK_START.md](../QUICK_START.md)
+Ready to start? Go to [QUICK_START.md](../QUICK_START.md)

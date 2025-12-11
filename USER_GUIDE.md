@@ -3,14 +3,14 @@
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
 3. [Main Features](#main-features)
 4. [Step-by-Step Workflows](#step-by-step-workflows)
 5. [Understanding Your Data](#understanding-your-data)
-6. [Tips & Best Practices](#tips--best-practices)
+6. [Tips and Best Practices](#tips-and-best-practices)
 7. [Troubleshooting](#troubleshooting)
 8. [Getting Help](#getting-help)
 
@@ -18,30 +18,30 @@
 
 ## Introduction
 
-### What is Thinx?
+### What is Thinx
 
-Thinx is a web-based research platform designed specifically for social scientists and humanitarian researchers studying human trafficking. It helps you:
+Thinx is a web-based research platform designed for social scientists and humanitarian researchers studying human trafficking. It provides:
 
-- **Upload and analyze interview data** without writing code
-- **Standardize data** from different sources into a common format
-- **Visualize patterns** in trafficking routes, victim demographics, and crimes
-- **Query your data** using simple forms and pre-built queries
+- Upload and analysis of interview data without coding
+- Data standardization from different sources into a common format
+- Visualization of patterns in trafficking routes, victim demographics, and crimes
+- Data querying using simple forms and pre-built queries
 
-### Who Should Use This Guide?
+### Who Should Use This Guide
 
 This guide is for researchers who:
 - Have interview or survey data about human trafficking
-- Want to analyze their data without programming skills
+- Want to analyze data without programming skills
 - Need to share findings with other researchers
 - Are not familiar with databases or technical systems
 
-### What You'll Need
+### What You Need
 
-Before starting, make sure you have:
-1. **Access to the Thinx platform** (URL provided by your administrator)
-2. **Login credentials** (username and password)
-3. **Database connection details** (provided by administrator)
-4. **Your research data** in Excel (.xlsx) or JSON format
+Before starting, ensure you have:
+1. Access to the Thinx platform (URL provided by your administrator)
+2. Login credentials (username and password)
+3. Database connection details (provided by administrator)
+4. Research data in Excel (.xlsx) or JSON format
 
 ---
 
@@ -49,53 +49,53 @@ Before starting, make sure you have:
 
 ### First-Time Login
 
-1. **Open your web browser** (Chrome, Firefox, Edge, or Safari recommended)
-2. **Navigate to the Thinx URL** provided by your administrator
-3. **Enter your username and password**
-4. **Click "Login"**
+1. Open web browser (Chrome, Firefox, Edge, or Safari recommended)
+2. Navigate to the Thinx URL provided by your administrator
+3. Enter username and password
+4. Click "Login"
 
-> 💡 **Tip:** Bookmark the Thinx URL for easy access later!
+Note: Bookmark the Thinx URL for easy access.
 
 ### Understanding the Interface
 
-After logging in, you'll see:
+After logging in, the interface contains:
 
-- **Header Bar** (top): Shows your username and navigation
-  - **Help Button** (❓): Click for quick guidance
-  - **Logout Button**: Sign out when you're done
+- **Header Bar** (top): Username and navigation
+  - Help Button: Quick guidance
+  - Logout Button: Sign out when finished
   
-- **Main Area** (center): Where you work with your data
+- **Main Area** (center): Work area for data
   - Tabs or sections for different features
   
 - **Footer** (bottom): Links to documentation and support
 
 ### Quick Help Panel
 
-Click the **"Help"** button in the header to see quick tips about:
-- 🔌 Database connections
-- 📊 Data workflow
-- 🤖 AI Smart Mapper
-- 📈 Viewing data
+Click the "Help" button in the header for quick tips about:
+- Database connections
+- Data workflow
+- AI Smart Mapper
+- Viewing data
 
 ---
 
 ## Main Features
 
-### 1. Database Connection Manager 🔌
+### 1. Database Connection Manager
 
-**Purpose:** Connect to the central database where your research data is stored.
+**Purpose:** Connect to the central database where research data is stored.
 
-**What you need:**
-- Server address (e.g., "allegrograph" or an IP like "192.168.1.100")
+**Requirements:**
+- Server address (e.g., "allegrograph" or IP like "192.168.1.100")
 - Port number (usually 10035)
 - Repository name (e.g., "humantrafficking")
 - Username and password
 
-**Why it matters:** This connects Thinx to your research database so you can upload and query data.
+**Function:** Connects Thinx to your research database for data upload and queries.
 
 ---
 
-### 2. Data Upload & Workflow 📊
+### 2. Data Upload and Workflow
 
 **Purpose:** Upload raw interview data and automatically process it into standardized format.
 
@@ -103,35 +103,35 @@ Click the **"Help"** button in the header to see quick tips about:
 - Excel files (.xlsx, .xls)
 - JSON files (.json)
 
-**What happens:**
-1. You upload your file
-2. The system shows you the columns in your data
-3. You map your columns to standard fields
-4. The system processes and validates your data
-5. Data is stored in the database ready for analysis
+**Process:**
+1. Upload file
+2. System displays columns in data
+3. Map columns to standard fields
+4. System processes and validates data
+5. Data stored in database ready for analysis
 
 ---
 
-### 3. AI Smart Mapper 🤖
+### 3. AI Smart Mapper
 
-**Purpose:** Automatically suggests how your data columns match the standard format.
+**Purpose:** Automatically suggests how data columns match the standard format.
 
-**How it helps:**
+**Benefits:**
 - Saves time mapping columns manually
 - Reduces errors in data standardization
 - Learns from common interview data patterns
 
 **Requirements:**
-- An AI model must be downloaded (done once by admin or yourself)
+- AI model must be downloaded (done once by admin or user)
 - Recommended models: llama3.2, phi3, or mistral
 
 ---
 
-### 4. Data Viewer & Queries 📈
+### 4. Data Viewer and Queries
 
-**Purpose:** Explore your processed data and run analyses.
+**Purpose:** Explore processed data and run analyses.
 
-**What you can do:**
+**Capabilities:**
 - View all victim records in a table
 - Run pre-built queries (e.g., "victims by border crossing")
 - Export results for reports
@@ -141,46 +141,46 @@ Click the **"Help"** button in the header to see quick tips about:
 
 ## Step-by-Step Workflows
 
-### Workflow 1: Setting Up Your Database Connection
+### Workflow 1: Setting Up Database Connection
 
-**When to do this:** First time using Thinx, or when connecting to a new database.
+**When to use:** First time using Thinx, or when connecting to a new database.
 
 **Steps:**
 
-1. **Click "Connection Manager"** (or similar tab)
+1. Click "Connection Manager" (or similar tab)
    
-2. **Click "➕ Add AllegroGraph Connection"**
+2. Click "Add AllegroGraph Connection"
    
-3. **Fill in the connection form:**
+3. Fill in the connection form:
    
    | Field | What to Enter | Example |
    |-------|--------------|---------|
-   | **Connection Name** | A friendly name for this database | "Main Research Database" |
-   | **Server Address** | Hostname or IP from admin | "allegrograph" or "192.168.1.100" |
-   | **Port** | Port number (usually 10035) | 10035 |
-   | **Repository Name** | Database name from admin | "humantrafficking" |
-   | **Username** | Your database username | your_username |
-   | **Password** | Your database password | your_password |
+   | Connection Name | A friendly name for this database | "Main Research Database" |
+   | Server Address | Hostname or IP from admin | "allegrograph" or "192.168.1.100" |
+   | Port | Port number (usually 10035) | 10035 |
+   | Repository Name | Database name from admin | "humantrafficking" |
+   | Username | Database username | your_username |
+   | Password | Database password | your_password |
    
-4. **Check "Test connection before saving"** (recommended)
+4. Check "Test connection before saving" (recommended)
    
-5. **Click "💾 Save Connection"**
+5. Click "Save Connection"
    
-6. **Wait for confirmation:**
-   - ✅ Green message = Success!
-   - ❌ Red message = Check your details and try again
+6. Wait for confirmation:
+   - Green message = Success
+   - Red message = Check details and try again
 
 ---
 
 ### Workflow 2: Uploading and Processing Interview Data
 
-**When to do this:** When you have new interview data to add to the database.
+**When to use:** When you have new interview data to add to the database.
 
 **Steps:**
 
-**Step 1: Prepare Your Data**
+**Step 1: Prepare Data**
 
-Before uploading, ensure your data file:
+Before uploading, ensure data file:
 - Is in Excel (.xlsx) or JSON format
 - Contains interview records (one row per interview or victim)
 - Has column headers that describe each field
@@ -188,29 +188,29 @@ Before uploading, ensure your data file:
 
 **Step 2: Access the Workflow Manager**
 
-1. Click **"Workflow Manager"** or **"Data Upload"** in the navigation
-2. You'll see a step-by-step process guide
+1. Click "Workflow Manager" or "Data Upload" in navigation
+2. View step-by-step process guide
 
-**Step 3: Upload Your File**
+**Step 3: Upload File**
 
-1. **Drag and drop** your file onto the upload area, or **click to browse**
-2. Select your Excel or JSON file
-3. Wait for upload to complete (you'll see a green checkmark)
+1. Drag and drop file onto upload area, or click to browse
+2. Select Excel or JSON file
+3. Wait for upload to complete (green checkmark appears)
 
 **Step 4: Review Data Structure**
 
-1. The system shows you the **Common Data Model** (CDM)
-   - This is the standard format all data follows
+1. System shows the Common Data Model (CDM)
+   - Standard format all data follows
    - Fields include: victim demographics, crimes, borders, traffickers
    
-2. Review the **field categories:**
-   - 🔴 **Sensitive fields** (require extra protection)
-   - 🟡 **Moderate sensitivity**
-   - 🟢 **Low sensitivity**
+2. Review field categories:
+   - Sensitive fields (require extra protection)
+   - Moderate sensitivity
+   - Low sensitivity
 
-**Step 5: Map Your Columns**
+**Step 5: Map Columns**
 
-This is where you tell Thinx which column in your file matches which standard field.
+Tell Thinx which column in your file matches which standard field.
 
 **Option A: Manual Mapping**
 
@@ -221,18 +221,18 @@ This is where you tell Thinx which column in your file matches which standard fi
 
 **Option B: AI Smart Mapper (Recommended)**
 
-1. Click **"🤖 Use AI Smart Mapper"**
+1. Click "Use AI Smart Mapper"
 2. Select an AI model (if not already selected)
-3. Click **"Suggest Mappings"**
-4. Wait 30-60 seconds for AI to analyze your columns
+3. Click "Suggest Mappings"
+4. Wait 30-60 seconds for AI to analyze columns
 5. Review the suggestions
 6. Approve or adjust mappings as needed
 
 **Step 6: Process Data**
 
-1. Click **"▶️ Process Data"**
-2. The system will:
-   - Validate your data
+1. Click "Process Data"
+2. System will:
+   - Validate data
    - Standardize formats
    - Check for errors
    - Create structured records
@@ -241,39 +241,39 @@ This is where you tell Thinx which column in your file matches which standard fi
 **Step 7: Upload to Database**
 
 1. Review the processing summary
-2. Click **"⬆️ Upload to Database"**
+2. Click "Upload to Database"
 3. Wait for confirmation
-4. Your data is now in the database and ready for analysis!
+4. Data is now in the database and ready for analysis
 
 ---
 
-### Workflow 3: Viewing and Querying Your Data
+### Workflow 3: Viewing and Querying Data
 
-**When to do this:** After data is uploaded, when you want to analyze patterns.
+**When to use:** After data is uploaded, when you want to analyze patterns.
 
 **Steps:**
 
-1. **Navigate to "Data Viewer"** or similar tab
+1. Navigate to "Data Viewer" or similar tab
    
-2. **Choose what to view:**
-   - **All Records**: See everything in the database
-   - **Filtered View**: Narrow down by criteria
-   - **Pre-built Queries**: Run common analyses
+2. Choose what to view:
+   - All Records: See everything in database
+   - Filtered View: Narrow down by criteria
+   - Pre-built Queries: Run common analyses
 
-3. **Run a pre-built query:**
+3. Run a pre-built query:
    
-   Example queries you might see:
+   Example queries:
    - "Top 10 borders by victim count"
    - "Victims by nationality"
    - "Total extortion amounts by border"
    - "Abuse types experienced"
 
-4. **View results:**
+4. View results:
    - Tables show data in rows and columns
    - Charts visualize patterns
-   - Export buttons let you save results
+   - Export buttons save results
 
-5. **Export your findings:**
+5. Export findings:
    - Click "Export to CSV" for Excel-compatible files
    - Click "Export to PDF" for reports (if available)
 
@@ -283,10 +283,10 @@ This is where you tell Thinx which column in your file matches which standard fi
 
 ### The Common Data Model (CDM)
 
-Thinx uses a standardized format called the Common Data Model. This ensures all research data follows the same structure, making it easier to:
-- Compare data from different sources
-- Run consistent analyses
-- Share findings with other researchers
+Thinx uses a standardized format called the Common Data Model. This ensures all research data follows the same structure, enabling:
+- Comparison of data from different sources
+- Consistent analyses
+- Sharing of findings with other researchers
 
 **Main data categories:**
 
@@ -294,7 +294,7 @@ Thinx uses a standardized format called the Common Data Model. This ensures all 
    - Age, gender, nationality
    - Unique identifier (victim_id)
    
-2. **Crimes & Abuses**
+2. **Crimes and Abuses**
    - Sexual violence (experienced/witnessed)
    - Physical/psychological abuse
    - Deaths witnessed
@@ -312,60 +312,60 @@ Thinx uses a standardized format called the Common Data Model. This ensures all 
 
 Thinx classifies data by sensitivity:
 
-- 🔴 **Highly Sensitive**: Personal identifiers, specific names, locations
+- **Highly Sensitive:** Personal identifiers, specific names, locations
   - Requires strict access controls
   - Examples: Full names, exact addresses
   
-- 🟡 **Moderately Sensitive**: Demographics, general experiences
+- **Moderately Sensitive:** Demographics, general experiences
   - Standard protection measures
   - Examples: Age, nationality, abuse types
   
-- 🟢 **Low Sensitivity**: Aggregated statistics, anonymized patterns
+- **Low Sensitivity:** Aggregated statistics, anonymized patterns
   - Can be shared more freely
   - Examples: Border crossing counts, average ages
 
 ### GDPR Compliance
 
 All data handling follows GDPR principles:
-- **Consent**: Only use data you have permission to use
-- **Purpose**: Use data only for stated research purposes
-- **Minimization**: Collect only what you need
-- **Security**: Platform protects data with encryption and access controls
-- **Rights**: Participants' rights to access/delete their data must be respected
+- **Consent:** Only use data you have permission to use
+- **Purpose:** Use data only for stated research purposes
+- **Minimization:** Collect only what you need
+- **Security:** Platform protects data with encryption and access controls
+- **Rights:** Participants' rights to access/delete their data must be respected
 
 ---
 
-## Tips & Best Practices
+## Tips and Best Practices
 
 ### Data Preparation Tips
 
-✅ **Before uploading:**
-- Remove any duplicate rows
+**Before uploading:**
+- Remove duplicate rows
 - Ensure column headers are clear and descriptive
 - Fill in missing values with "Unknown" or "Not Specified" rather than leaving blank
 - Use consistent formatting (e.g., all dates in same format)
 
-✅ **Column naming:**
+**Column naming:**
 - Use descriptive names: "Victim Age" not "Col3"
-- Avoid special characters: Use "Victim_Age" not "Victim's Age!!!"
+- Avoid special characters: Use "Victim_Age" not "Victim's Age"
 - Be consistent: "Gender" not "Gender" in one file and "Sex" in another
 
 ### Mapping Tips
 
-✅ **When mapping columns:**
-- Take your time to ensure correct mappings
+**When mapping columns:**
+- Take time to ensure correct mappings
 - If unsure, consult the field descriptions
 - Use AI Smart Mapper for first attempt, then review
 - Mark fields as "Not in my data" if you don't have that information
 
-✅ **Common mapping mistakes to avoid:**
-- ❌ Mapping "Date of Birth" to "Age" (these are different!)
-- ❌ Mapping currency amounts to nationality fields
-- ❌ Mapping "yes/no" fields to text description fields
+**Common mapping mistakes to avoid:**
+- Mapping "Date of Birth" to "Age" (these are different)
+- Mapping currency amounts to nationality fields
+- Mapping "yes/no" fields to text description fields
 
 ### Query Tips
 
-✅ **Getting useful results:**
+**Getting useful results:**
 - Start with pre-built queries to learn the system
 - Filter by date ranges to see trends over time
 - Export results regularly for your records
@@ -373,7 +373,7 @@ All data handling follows GDPR principles:
 
 ### Security Tips
 
-✅ **Protecting sensitive data:**
+**Protecting sensitive data:**
 - Always log out when done
 - Never share your password
 - Don't take screenshots of sensitive data
@@ -461,7 +461,7 @@ Contact your system administrator or support team if:
 ### Resources
 
 1. **Quick Help Panel**
-   - Click the "❓ Help" button in the header
+   - Click the "Help" button in the header
    - Provides quick tips for each feature
    
 2. **Documentation**
@@ -517,12 +517,10 @@ Contact your system administrator or support team if:
 
 ---
 
-## Need More Help?
+## Need More Help
 
-This guide covers the essentials, but there's always more to learn! 
+This guide covers the essentials. For additional information:
 
 - For technical details, see the main [README.md](README.md)
 - For troubleshooting, see [FAQ.md](FAQ.md)
 - For administrator tasks, see [ADMIN_GUIDE.md](ADMIN_GUIDE.md)
-
-**Happy researching! 🧠📊**
