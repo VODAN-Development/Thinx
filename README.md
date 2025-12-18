@@ -271,7 +271,7 @@ To work with multiple datasets:
 
 ### FAIR-OLR Compliance
 
-This system adheres to FAIR-OLR (Findable, Accessible, Interoperable, Reusable - Ontology-based Layered Routing) principles:
+This system adheres to FAIR-OLR (Findable, Accessible, Interoperable, Reusable - Ownership, Locale, Regulatory) principles:
 
 - **Findable:** Datasets discoverable through external FAIR Data Points (FDPs)
 - **Accessible:** Data accessible via standard protocols (SPARQL, HTTP) with authentication
