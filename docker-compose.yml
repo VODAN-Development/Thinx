@@ -44,7 +44,7 @@ services:
     environment:
       # Database admin credentials - CHANGE THESE FOR PRODUCTION!
       - AGRAPH_SUPER_USER=admin
-      - AGRAPH_SUPER_PASSWORD=admin123
+      - AGRAPH_SUPER_PASSWORD=admin1233
     volumes:
       # Save database files so they survive container restarts
       - agraph_data:/data
