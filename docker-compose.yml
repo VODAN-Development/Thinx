@@ -198,7 +198,7 @@ services:
       target: development            # Development build with hot-reload
     container_name: vue_ui           # Name to reference this container
     ports:
-      - "9080:80"                      # Web interface port (standard HTTP)
+      - "8080:80"                      # Web interface port (standard HTTP)
                                      # 💡 If port 80 is in use, change to "8080:80"
                                      #    then access at http://localhost:8080
     environment:
