@@ -6,10 +6,10 @@ List all repositories in AllegroGraph
 import requests
 from requests.auth import HTTPBasicAuth
 
-AGRAPH_HOST = "localhost"
+AGRAPH_HOST = "https://ag1s5fv23e82hv78.allegrograph.cloud"
 AGRAPH_PORT = 10035
-AGRAPH_USER = "admin"
-AGRAPH_PASSWORD = "admin123"
+AGRAPH_USER = "Admin"
+AGRAPH_PASSWORD = "moVzCHbrYZ9XdRipk18Pg1"
 
 BASE_URL = f"http://{AGRAPH_HOST}:{AGRAPH_PORT}"
 
