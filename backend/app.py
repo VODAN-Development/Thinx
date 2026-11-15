@@ -555,8 +555,14 @@ def get_connections():
         Connection credentials stored locally in encrypted format.
     """
     try:
-        user_id = request.args.get('user_id')
-        connections = connection_manager.get_all_connections(user_id=user_id)
+        user = g.current_user
+
+        if user.get('is_admin'):
+            connections = connection_manager.get_all_connections()
+        else:
+            connections = connection_manager.get_all_connections(
+                user_id=user['id']
+    )
         return jsonify({
             'success': True,
             'connections': connections,
@@ -604,7 +610,7 @@ def create_connection():
         
         # Validate required fields
         connection_type = data.get('type', 'allegrograph')
-        user_id = g.current_user.get['id']  # Required for user ownership
+        user_id = g.current_user['id']  # Required for user ownership
         
         if not user_id:
             return jsonify({
@@ -722,7 +728,7 @@ def update_connection(connection_id):
         return jsonify({
             'success': True,
             'message': 'Connection updated successfully',
-            'connection': updated_connection
+            'connection': public_connection(updated_connection)
         }), 200
         
     except Exception as e:
