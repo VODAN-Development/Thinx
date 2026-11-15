@@ -3,6 +3,7 @@
  */
 
 import axios from 'axios'
+import { authState, clearSession, hasValidSession } from './auth'
 
 // Get API URL from environment or default to localhost
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
@@ -19,6 +20,9 @@ const apiClient = axios.create({
 // Request interceptor for logging (development only)
 apiClient.interceptors.request.use(
   config => {
+    if (hasValidSession()) {
+      config.headers.set('Authorization', `Bearer ${authState.accessToken}`)
+    }
     if (import.meta.env.MODE === 'development') {
       console.log(`API Request: ${config.method.toUpperCase()} ${config.url}`)
     }
@@ -45,15 +49,32 @@ apiClient.interceptors.response.use(
         console.error('API Error:', error.message)
       }
     }
+    // A 401 from a protected endpoint means the current session is not valid.
+    // A 401 on /login is just a failed login attempt.
+    if (error.response?.status === 401 && authState.accessToken &&
+        !['/login', '/register'].includes(error.config?.url)) {
+      clearSession()
+      window.location.replace('/login')
+    }
     return Promise.reject(error)
   }
 )
 
 export default {
+  async login(username, password) {
+    const response = await apiClient.post('/login', { username, password })
+    return response.data
+  },
+
+  async register(username, password) {
+    const response = await apiClient.post('/register', { username, password })
+    return response.data
+  },
+
   // Connection management
-  async getConnections(userId = null) {
-    const params = userId ? { user_id: userId } : {}
-    const response = await apiClient.get('/connections', { params })
+  async getConnections() {
+    // The backend determines the owner from the authenticated token.
+    const response = await apiClient.get('/connections')
     return response.data
   },
 

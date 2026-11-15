@@ -1112,8 +1112,7 @@ export default {
     },
     async loadConnections() {
       try {
-        const userId = this.user?.id
-        const response = await api.getConnections(userId)
+        const response = await api.getConnections()
         if (response.success) {
           this.allegroGraphConnections = response.connections
         }

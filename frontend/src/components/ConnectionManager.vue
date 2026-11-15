@@ -97,8 +97,7 @@ export default {
     async loadConnections() {
       this.loading = true
       try {
-        const userId = this.user?.id
-        const response = await api.getConnections(userId)
+        const response = await api.getConnections()
         if (response.success) {
           this.connections = response.connections
         }
@@ -121,19 +120,13 @@ export default {
 
     async handleSaveConnection(connectionData) {
       try {
-        // Add user_id to connection data
-        const dataWithUser = {
-          ...connectionData,
-          user_id: this.user?.id
-        }
-        
         let response
         if (this.editingConnection) {
           // Update existing
-          response = await api.updateConnection(this.editingConnection.id, dataWithUser)
+          response = await api.updateConnection(this.editingConnection.id, connectionData)
         } else {
           // Create new
-          response = await api.createConnection(dataWithUser)
+          response = await api.createConnection(connectionData)
         }
 
         if (response.success) {
