@@ -56,8 +56,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { API_BASE_URL } from '../services/api';
+import api from '../services/api';
+import { setSession } from '../services/auth';
 
 export default {
   name: 'Login',
@@ -75,22 +75,18 @@ export default {
       this.loading = true;
 
       try {
-        const response = await axios.post(`${API_BASE_URL}/api/login`, {
-          username: this.username,
-          password: this.password
-        });
+        const data = await api.login(this.username, this.password);
 
-        if (response.data.success) {
-          // Store user data in localStorage
-          localStorage.setItem('user', JSON.stringify(response.data.user));
-          
-          // Emit login event to parent
-          this.$emit('login', response.data.user);
+        if (data.success && data.access_token) {
+          setSession(data.user, data.access_token, data.expires_in);
+
+          // Notify the parent (the reactive auth state drives the UI).
+          this.$emit('login', data.user);
           
           // Redirect to home
           this.$router.push('/');
         } else {
-          this.error = response.data.error || 'Login failed';
+          this.error = data.error || 'Login failed';
         }
       } catch (err) {
         console.error('Login error:', err);

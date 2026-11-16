@@ -1,3 +1,4 @@
+import { hasValidSession } from '../services/auth'
 import { createRouter, createWebHistory } from 'vue-router'
 import WorkflowManager from '../components/WorkflowManager.vue'
 import ConnectionManager from '../components/ConnectionManager.vue'
@@ -43,13 +44,13 @@ const router = createRouter({
 
 // Navigation guard to check authentication
 router.beforeEach((to, from, next) => {
-  const user = localStorage.getItem('user')
+  const authenticated = hasValidSession()
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
 
-  if (requiresAuth && !user) {
+  if (requiresAuth && !authenticated) {
     // Redirect to login if route requires auth and user is not logged in
     next('/login')
-  } else if (!requiresAuth && user && (to.name === 'Login' || to.name === 'Register')) {
+  } else if (!requiresAuth && authenticated && (to.name === 'Login' || to.name === 'Register')) {
     // Redirect to home if user is logged in and trying to access login/register
     next('/')
   } else {

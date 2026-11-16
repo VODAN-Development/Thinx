@@ -573,8 +573,14 @@ def get_connections():
         Connection passwords are stored encrypted and never returned (D-S3).
     """
     try:
-        user_id = request.args.get('user_id')
-        connections = connection_manager.get_all_connections(user_id=user_id)
+        user = g.current_user
+
+        if user.get('is_admin'):
+            connections = connection_manager.get_all_connections()
+        else:
+            connections = connection_manager.get_all_connections(
+                user_id=user['id']
+    )
         return jsonify({
             'success': True,
             'connections': [public_connection(c) for c in connections],
@@ -622,7 +628,7 @@ def create_connection():
         
         # Validate required fields
         connection_type = data.get('type', 'allegrograph')
-        user_id = g.current_user.get['id']  # Required for user ownership
+        user_id = g.current_user['id']  # Required for user ownership
         
         if not user_id:
             return jsonify({

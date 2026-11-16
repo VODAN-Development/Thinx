@@ -76,8 +76,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { API_BASE_URL } from '../services/api';
+import api from '../services/api';
 
 export default {
   name: 'Register',
@@ -117,12 +116,9 @@ export default {
       this.loading = true;
 
       try {
-        const response = await axios.post(`${API_BASE_URL}/api/register`, {
-          username: this.username,
-          password: this.password
-        });
+        const data = await api.register(this.username, this.password);
 
-        if (response.data.success) {
+        if (data.success) {
           this.success = 'Account created successfully! Redirecting to login...';
           
           // Redirect to login after 2 seconds
@@ -130,12 +126,12 @@ export default {
             this.$router.push('/login');
           }, 2000);
         } else {
-          this.error = response.data.error || 'Registration failed';
+          this.error = data.error || 'Registration failed';
         }
       } catch (err) {
         console.error('Registration error:', err);
         if (err.response && err.response.data) {
-          this.error = err.response.data.error || 'Registration failed';
+          this.error = err.data.error || 'Registration failed';
         } else {
           this.error = 'Unable to connect to server';
         }
